@@ -1,0 +1,118 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Modelos treinados
+fine_tuned_model/
+checkpoints/
+models/
+*.bin
+*.safetensors
+
+# Logs e outputs
+logs/
+outputs/
+runs/
+wandb/
+mlruns/
+*.log
+
+# Dados
+*.csv
+*.json
+*.parquet
+*.h5
+*.hdf5
+data/
+datasets/
+tmp_eval/
+
+# Cache
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Configurações locais
+config_local.py
+.env.local
+.env.production
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Arquivos de backup
+*.bak
+*.backup
+*~
+
+# Arquivos de teste
+test_*.py
+*_test.py
+tests/
+
+# Arquivos de documentação temporários
+docs/_build/
+site/
+
+# Arquivos de distribuição
+*.tar.gz
+*.zip
+*.rar
+
+# Arquivos de configuração sensíveis
+secrets.json
+credentials.json
+*.key
+*.pem

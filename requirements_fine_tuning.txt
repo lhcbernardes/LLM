@@ -1,12 +1,17 @@
-# Dependências para Fine-tuning Amazon Titles Project
+# Dependências para Fine-tuning Amazon Titles Project - Otimizado para GPU AMD
 
-# Core ML Libraries
+# Core ML Libraries com suporte AMD
+# Para GPU AMD (ROCm):
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.6
+# Para GPU NVIDIA (CUDA):
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 torch>=2.0.0
 transformers>=4.30.0
 datasets>=2.12.0
 accelerate>=0.20.0
 
-# Unsloth - Otimização de Fine-tuning
+# Otimizações para GPU AMD
+# Unsloth - Otimização de Fine-tuning (compatível com AMD)
 unsloth>=2024.1
 
 # Data Processing
@@ -18,6 +23,7 @@ scikit-learn>=1.3.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
 wordcloud>=1.9.0
+rich>=13.0.0  # Para interface rica
 
 # Text Processing
 nltk>=3.8.0
@@ -29,9 +35,25 @@ logging
 json
 re
 
+# Otimizações de Performance para AMD
+# bitsandbytes - Para quantização (se compatível)
+# bitsandbytes>=0.41.0
+
 # Optional - Para Colab
 # !pip install google-colab
 # !pip install wandb  # Para experiment tracking
 
 # GPU Support (se disponível)
 # torch-cuda  # Instalar automaticamente com torch se CUDA disponível 
+# torch-rocm  # Instalar automaticamente com torch se ROCm disponível
+
+# Configurações específicas para AMD GPU:
+# 1. Instalar PyTorch com suporte ROCm:
+#    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.6
+# 
+# 2. Verificar se ROCm está funcionando:
+#    python -c "import torch; print(f'ROCm: {torch.version.hip}'); print(f'CUDA: {torch.cuda.is_available()}')"
+#
+# 3. Para melhor performance, configurar variáveis de ambiente:
+#    export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
+#    export HSA_OVERRIDE_GFX_VERSION=10.3.0  # Ajustar para sua GPU AMD 
